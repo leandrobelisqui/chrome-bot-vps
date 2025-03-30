@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  chrome-bot:
+    build: .
+    container_name: chrome-bot
+    ports:
+      - "5900:5900"
+    volumes:
+      - chrome-data:/home/chrome
+    restart: always
+
+volumes:
+  chrome-data:
