@@ -7,7 +7,7 @@ services:
     ports:
       - "5900:5900"
     volumes:
-      - chrome-data:/home/chrome
+      - chrome-data:/root/.config/google-chrome
       - /etc/localtime:/etc/localtime:ro
     environment:
       - TZ=America/Sao_Paulo
