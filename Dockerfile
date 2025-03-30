@@ -16,6 +16,9 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add
 COPY extensao /opt/extensao
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+RUN echo "America/Sao_Paulo" > /etc/timezone && \
+    ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+
 EXPOSE 5900
 
 CMD ["/usr/bin/supervisord"]
